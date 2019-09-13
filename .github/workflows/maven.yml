@@ -9,8 +9,8 @@ jobs:
 
     steps:
     - name: Docker Login
-    - uses: actions/checkout@master
-    - uses: ./action-a
+      uses: actions/checkout@master
+      uses: ./action-a
       env:
         MY_NAME: "Phil"
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
