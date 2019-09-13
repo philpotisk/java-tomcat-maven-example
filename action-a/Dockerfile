@@ -1,3 +1,4 @@
+#!/bin/bash
 FROM docker:stable
 
 LABEL "name"="Docker CLI Action"
@@ -9,6 +10,6 @@ LABEL "com.github.actions.description"="Wraps the Docker CLI to enable Docker co
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="blue"
 
-COPY entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 ENTRYPOINT ["/entrypoint.sh"]
