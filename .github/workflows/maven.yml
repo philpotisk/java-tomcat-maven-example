@@ -1,4 +1,4 @@
-name: Java CI
+name: Hello World CI/CD
 
 on: [push]
 
