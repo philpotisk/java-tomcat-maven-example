@@ -16,7 +16,7 @@ jobs:
     - name: Build with Maven
       run: mvn package --file pom.xml
     - name: Docker push
-      uses: actions/pangzineng/Github-Action-One-Click-Docker@master
+      uses: pangzineng/Github-Action-One-Click-Docker@master
       with:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
