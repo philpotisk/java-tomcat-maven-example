@@ -14,13 +14,6 @@ jobs:
       with:
         java-version: 1.8
     - name: Build with Maven
-      run: mvn package --file pom.xml
-    - name: Docker push
-      uses: pangzineng/Github-Action-One-Click-Docker@master
-      with:
-        DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
-        DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-        DOCKER_NAMESPACE: ${{secrets.DOCKER_NAMESPACE}}
-         
-
-
+      run: echo "hello --------------------------------------"
+      run: echo ${{secrets.DOCKER_USERNAME}}
+      run: echo ${{secrets.DOCKER_NAMESPACE}}
