@@ -8,8 +8,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - uses: actions/checkout@master
     - name: Docker Login
-      uses: actions/checkout@master
       uses: ./action-a
       env:
         MY_NAME: "Phil"
