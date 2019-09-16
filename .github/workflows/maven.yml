@@ -12,7 +12,7 @@ jobs:
     - name: Maven Build
       uses: ./actions/build
     - name: Docker Build and Push
-      uses: ./action/docker-push
+      uses: ./actions/docker-push
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
