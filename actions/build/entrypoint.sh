@@ -1,4 +1,5 @@
 #!/bin/sh -l
 
-sh -c "echo MVN BUILD"
+sh -c "echo MAVEN BUILD"
 sh -c "mvn --version"
+sh -c "mvn package"
