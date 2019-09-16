@@ -11,9 +11,8 @@ jobs:
     - uses: actions/checkout@master
     - name: Maven Build
       uses: ./actions/build
-    - name: Docker Login
-      uses: ./action-a
+    - name: Docker Build and Push
+      uses: /action/docker-push
       env:
-        MY_NAME: "Phil"
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
