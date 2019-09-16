@@ -9,6 +9,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Maven Build
+      uses: ./actions/build
     - name: Docker Login
       uses: ./action-a
       env:
