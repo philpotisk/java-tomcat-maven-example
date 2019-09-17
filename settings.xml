@@ -14,12 +14,12 @@
             <activeByDefault>true</activeByDefault>
          </activation>
          <repositories>
-            <repository>
+            <!-- <repository>
                <id>central</id>
                <url>https://repo1.maven.org/maven2</url>
                <releases><enabled>true</enabled></releases>
                <snapshots><enabled>true</enabled></snapshots>
-            </repository>
+            </repository> -->
             <repository>
                 <id>github</id>
                 <name>GitHub philpotisk Apache Maven Packages</name>

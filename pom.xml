@@ -6,7 +6,7 @@
   <artifactId>java-tomcat-maven-example</artifactId>
   <packaging>war</packaging>
   <version>1.0-SNAPSHOT</version>
-  <name>hello Maven Webapp</name>
+  <name>java-tomcat-maven-example</name>
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
@@ -46,7 +46,7 @@
     <repository>
       <id>github</id>
       <name>GitHub philpotisk Apache Maven Packages</name>
-      <url>https://maven.pkg.github.com/philtest</url>
+      <url>https://maven.pkg.github.com/philtest/java-tomcat-maven-example</url>
     </repository>
   </distributionManagement>
 </project>
