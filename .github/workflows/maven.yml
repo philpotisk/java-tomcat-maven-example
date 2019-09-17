@@ -13,7 +13,7 @@ jobs:
       uses: ./actions/build
       env:
         GITHUB_USERNAME: philpotisk
-        GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}  
+        GITHUB_PASSWORD: ${{ secrets.GITHUB_ACCESS_TOKEN }}  
     - name: Docker Build and Push
       uses: ./actions/docker-push
       env:
