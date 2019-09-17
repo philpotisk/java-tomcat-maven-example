@@ -11,6 +11,9 @@ jobs:
     - uses: actions/checkout@master
     - name: Maven Build
       uses: ./actions/build
+      env:
+        GITHUB_USERNAME: philpotisk
+        GITHUB_PASSWORD: ${{ secrets.GITHUB_TOKEN }}  
     - name: Docker Build and Push
       uses: ./actions/docker-push
       env:
