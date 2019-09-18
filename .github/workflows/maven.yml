@@ -1,4 +1,4 @@
-name: Hello World CI/CD
+name: Java/Docker/Kubernetes CI/CD
 
 on: [push]
 
@@ -9,14 +9,6 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
-    - name: Update EKS
-      uses: ./actions/deploy-eks
-      with:
-        args: apply -f deployment-java-hello-world.yaml
-      env:
-        KUBE_CONFIG_DATA: ${{secrets.KUBE_CONFIG_DATA}}
-        AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
-        AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
     - name: Maven Build
       uses: ./actions/build
       env:
@@ -27,3 +19,11 @@ jobs:
       env:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
+    - name: Update EKS
+      uses: ./actions/deploy-eks
+      with:
+        args: apply -f deployment-java-hello-world.yaml
+      env:
+        KUBE_CONFIG_DATA: ${{secrets.KUBE_CONFIG_DATA}}
+        AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
+        AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
