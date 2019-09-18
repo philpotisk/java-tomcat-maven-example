@@ -10,8 +10,9 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Update EKS
-      uses: actions/aws/cli@master
-      uses: actions/aws/kubectl@master
+    - uses: actions/aws/cli@master
+    - uses: actions/aws/kubectl@master
+      run: aws s3 ls
       with:
         args: apply -f deployment-java-hello-world.yaml
       env:
