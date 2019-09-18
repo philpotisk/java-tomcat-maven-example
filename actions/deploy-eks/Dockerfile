@@ -1,4 +1,4 @@
-FROM python:3
+FROM bitnami/minideb:latest
 
 LABEL "name"="Deploy to AWS EKS"
 LABEL "maintainer"="Phil <philipp.potisk@danubetech.com>"
@@ -17,7 +17,11 @@ RUN apt-get update -y && \
     chmod +x ./kubectl && \
     mv ./kubectl /usr/local/bin/kubectl && \
     apt-get -y clean && apt-get -y autoclean && apt-get -y autoremove && \
-    pip install --upgrade pip && \
-    pip install setuptools awscli
+    apt-get install -y python3 && \
+    apt install -y python3-pip && \
+    pip3 install --upgrade pip && \
+    pip3 install setuptools awscli
 
-COPY entrypoint.sh /entrypoint.sh
+ADD entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]
