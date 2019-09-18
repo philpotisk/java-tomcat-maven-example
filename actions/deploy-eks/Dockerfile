@@ -15,7 +15,7 @@ RUN apt-get update -y && \
     chmod +x /bin/aws-iam-authenticator && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/* && \
-    apt-get install -y --no-install-recommends curl groff jq && \
+    apt-get install -y --no-install-recommends curl && \
     apt-get -y clean && apt-get -y autoclean && apt-get -y autoremove && \
     apt-get install -y python3 python3-pip && \
     pip install --upgrade pip && \
