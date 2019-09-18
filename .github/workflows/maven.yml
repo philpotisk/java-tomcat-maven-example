@@ -10,6 +10,7 @@ jobs:
     steps:
     - uses: actions/checkout@master
     - name: Update EKS
+      uses: actions/aws/cli@master
       uses: actions/aws/kubectl@master
       with:
         args: apply -f deployment-java-hello-world.yaml
