@@ -9,10 +9,15 @@ jobs:
 
     steps:
     - uses: actions/checkout@master
+    - name: Update EKS
+      uses: actions/aws/kubectl@master
+      args: apply -f config.yml
+      env:
+        KUBE_CONFIG_DATA: ${{secrets.KUBE_CONFIG_DATA}}
     - name: Maven Build
       uses: ./actions/build
       env:
-        GITHUB_USERNAME: philpotisk
+        GITHUB_USERNAME: ${{ secrets.GITHUB_USERNAME }} 
         GITHUB_PASSWORD: ${{ secrets.GITHUB_ACCESS_TOKEN }}  
     - name: Docker Build and Push
       uses: ./actions/docker-push

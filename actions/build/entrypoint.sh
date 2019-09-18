@@ -2,4 +2,4 @@
 
 sh -c "echo MAVEN BUILD"
 sh -c "mvn --version"
-sh -c "mvn --settings settings.xml deploy"
+sh -c "mvn --settings settings.xml package"
