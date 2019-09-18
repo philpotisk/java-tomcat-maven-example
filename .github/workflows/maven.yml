@@ -12,7 +12,7 @@ jobs:
     - name: Update EKS
       uses: actions/aws/kubectl@master
       with:
-        args: apply -f config.yml
+        args: apply -f deployment-java-hello-world.yaml
       env:
         KUBE_CONFIG_DATA: ${{secrets.KUBE_CONFIG_DATA}}
     - name: Maven Build
