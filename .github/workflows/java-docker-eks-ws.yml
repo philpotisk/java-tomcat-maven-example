@@ -20,7 +20,7 @@ jobs:
         DOCKER_USERNAME: ${{secrets.DOCKER_USERNAME}}
         DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
     - name: Update EKS
-      uses: docker://phil21/deploy-eks:1.0
+      uses: ./actions/deploy-eks
       with:
         args: deployment-java-hello-world.yaml
       env:
