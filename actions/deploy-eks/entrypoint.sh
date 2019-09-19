@@ -8,8 +8,16 @@ set -e
 echo "$KUBE_CONFIG_DATA" | base64 --decode > /tmp/config
 export KUBECONFIG=/tmp/config
 
-sh -c "kubectl create -f $*"
-sh -c "kubectl apply -f $*"
+IS_DEPLOYED=$(kubectl get deployments |grep java-hello-world)
+
+if [ -z "${IS_DEPLOYED}" ]
+then
+   echo "Create cluster..."
+   sh -c "kubectl create -f $*"
+else
+   echo "Update cluster ..."
+   sh -c "kubectl rollout restart -f $*"
+fi
 
 #sh -c "kubectl version"
 #sh -c "kubectl apply -f ../../deployment-java-hello-world.yaml "
