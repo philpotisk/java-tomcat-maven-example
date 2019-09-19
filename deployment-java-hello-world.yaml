@@ -17,5 +17,6 @@ spec:
       containers:
       - name: java-hello-world
         image: phil21/java-hello-world:latest
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
